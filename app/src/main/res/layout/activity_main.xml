@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -10,53 +10,70 @@
     tools:context=".MainActivity">
 
 
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/videoModeButton"
+                android:src="@drawable/video_mode"
+                android:clickable="true"
+                android:layout_gravity="center"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="center">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/photoModeButton"
+                android:src="@drawable/photo_mode"
+                android:clickable="true"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/centerButton"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/buttonContainer">
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PHOTO MODE"
-            android:id="@+id/btnPhotoMode"
-            android:onClick="switchPhotoMode"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TAKE PHOTO"
-            android:id="@+id/btnTakePhoto"
-            android:onClick="takePhoto"
-            android:layout_toRightOf="@id/btnPhotoMode"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:id="@+id/actionButton"
+            android:src="@drawable/record_start"
+            android:layout_below="@+id/buttonContainer"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:clickable="true" />
+    </LinearLayout>
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="VIDEO MODE"
-            android:id="@+id/btnVideoMode"
-            android:onClick="switchVideoMode" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RECORD"
-            android:id="@+id/btnRecord"
-            android:onClick="recordVideo"
-            android:layout_toRightOf="@id/btnVideoMode"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="STOP"
-            android:id="@+id/btnStopRecord"
-            android:onClick="stopRecordVideo"
-            android:layout_toRightOf="@id/btnRecord"/>
-
-    </RelativeLayout>
-
-</LinearLayout>
+</RelativeLayout>

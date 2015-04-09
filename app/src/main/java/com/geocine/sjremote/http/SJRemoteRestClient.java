@@ -16,7 +16,7 @@ public class SJRemoteRestClient {
     public static Integer PHOTO_MODE = 0;
     public static Integer VIDEO_MODE = 1;
     private static String[] mode = { "photo" , "video" };
-    private static String[] record = { "paused" , "recording" };
+    private static String[] record = { "stopped" , "recording" };
 
     private static AsyncHttpClient client = new AsyncHttpClient();
 
@@ -39,13 +39,13 @@ public class SJRemoteRestClient {
         //get.execute(getAbsoluteUrl("&cmd=1001"));
         SJRemoteRestClient.get("&cmd=1001", null, new TextHttpResponseHandler() {
             @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                Toast.makeText(context, "Cannot take photo!", Toast.LENGTH_SHORT).show();
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                //Toast.makeText(context, "Photo success!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                Toast.makeText(context, "Photo success!", Toast.LENGTH_SHORT).show();
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                Toast.makeText(context, "Cannot take photo!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -55,7 +55,7 @@ public class SJRemoteRestClient {
         SJRemoteRestClient.get("&cmd=3001&par="+mode, null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                Toast.makeText(context, "Now in " + SJRemoteRestClient.mode[mode] + " mode !", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Now in " + SJRemoteRestClient.mode[mode] + " mode !", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -70,7 +70,7 @@ public class SJRemoteRestClient {
         SJRemoteRestClient.get("&cmd=2001&par="+mode, null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                Toast.makeText(context, "Video is now "+ SJRemoteRestClient.record[mode] + " !", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Video is now "+ SJRemoteRestClient.record[mode] + " !", Toast.LENGTH_SHORT).show();
             }
 
             @Override
