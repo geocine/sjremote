@@ -1,0 +1,16 @@
+*.apk
+*.ap_
+*.dex
+*.class
+local.properties
+
+.classpath
+.project
+
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+Thumbs.db
+.DS_Store
+/build
