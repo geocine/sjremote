@@ -4,6 +4,8 @@
 	<img src="http://i.imgur.com/589joHm.png"/>
 </p>
 
+**[Click Here To Download](https://dl.dropboxusercontent.com/u/16422464/com.geocine.sjremote.apk)**
+
 A very simple remote for **[SJCam](http://www.sjcam.com/)** on Android via  wifi. This application supports *Android 2.2.x* **Froyo** and up.
 
 This application does not have a video preview, this is just a remote control. It only contains the following features: 
