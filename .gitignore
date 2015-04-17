@@ -14,3 +14,5 @@ local.properties
 Thumbs.db
 .DS_Store
 /build
+
+manifest-merger-release-report.txt
