@@ -18,5 +18,6 @@ This application does not have a video preview, this is just a remote control. I
 Because the application is very lightweight and does not contain unneeded features , it is fast on very slow devices.
 
 This has only been tested on **SJ5000 Wifi**
-
-![](http://i.imgur.com/SkdZgTw.png)
+<div align="center">
+ <img src="http://i.imgur.com/SkdZgTw.png" width="100%"/>
+</div>
